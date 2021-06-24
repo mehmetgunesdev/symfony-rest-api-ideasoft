@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "853bc094-cfab-4d42-83a2-204b658c1e1a",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get Orders",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-AUTH-TOKEN",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/orders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": 1,\n    \"total\": \"219.75\",\n    \"items\": [\n        {\n            \"productId\": 3,\n            \"quantity\": 2,\n            \"unitPrice\": \"49.50\",\n            \"total\": \"99.00\"\n        },\n        {\n            \"productId\": 2,\n            \"quantity\": 1,\n            \"unitPrice\": \"120.75\",\n            \"total\": \"120.75\"\n        }\n    ]\n    \n}"
+						},
+						"url": {
+							"raw": "{{host}}/api/orders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Black&Decker A7062 40 Parça Cırcırlı Tornavida Seti\",\n    \"category\": 2,\n    \"price\": \"121.75\",\n    \"stock\": 0\n}"
+						},
+						"url": {
+							"raw": "{{host}}/api/products",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/api/products",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Get Customers",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/customer",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Türker Jöntürk\",\n    \"since\": \"2014-06-28\",\n    \"revenue\": \"492.12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/customers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
